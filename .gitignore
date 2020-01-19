@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # macOS files
 .DS_Store
+
+# App files
+SimpleMessenger/GoogleService-Info.plist
