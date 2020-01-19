@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0A847D9023D4CAC200730A42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A847D8F23D4CAC200730A42 /* GoogleService-Info.plist */; };
+		0A847D9223D4CCB500730A42 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A847D9123D4CCB500730A42 /* UserSession.swift */; };
+		0A847D9423D4D0DA00730A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A847D9323D4D0DA00730A42 /* User.swift */; };
+		0A847D9623D4D29900730A42 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A847D9523D4D29900730A42 /* AuthView.swift */; };
+		0A847D9823D4DB5600730A42 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A847D9723D4DB5600730A42 /* Colors.xcassets */; };
+		0A847D9A23D4E43F00730A42 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A847D9923D4E43F00730A42 /* SignInView.swift */; };
+		0A847D9C23D4E4A600730A42 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A847D9B23D4E4A600730A42 /* SignUpView.swift */; };
 		0AEE861323D4C74C00F5B72F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE861223D4C74C00F5B72F /* AppDelegate.swift */; };
 		0AEE861523D4C74C00F5B72F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE861423D4C74C00F5B72F /* SceneDelegate.swift */; };
 		0AEE861823D4C74C00F5B72F /* SimpleMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE861623D4C74C00F5B72F /* SimpleMessenger.xcdatamodeld */; };
@@ -20,6 +26,12 @@
 
 /* Begin PBXFileReference section */
 		0A847D8F23D4CAC200730A42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A847D9123D4CCB500730A42 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		0A847D9323D4D0DA00730A42 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0A847D9523D4D29900730A42 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		0A847D9723D4DB5600730A42 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0A847D9923D4E43F00730A42 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0A847D9B23D4E4A600730A42 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0AEE860F23D4C74C00F5B72F /* SimpleMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEE861223D4C74C00F5B72F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEE861423D4C74C00F5B72F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +82,13 @@
 				0AEE861223D4C74C00F5B72F /* AppDelegate.swift */,
 				0AEE861423D4C74C00F5B72F /* SceneDelegate.swift */,
 				0AEE861923D4C74C00F5B72F /* ContentView.swift */,
+				0A847D9523D4D29900730A42 /* AuthView.swift */,
+				0A847D9923D4E43F00730A42 /* SignInView.swift */,
+				0A847D9B23D4E4A600730A42 /* SignUpView.swift */,
+				0A847D9123D4CCB500730A42 /* UserSession.swift */,
+				0A847D9323D4D0DA00730A42 /* User.swift */,
 				0AEE861B23D4C74E00F5B72F /* Assets.xcassets */,
+				0A847D9723D4DB5600730A42 /* Colors.xcassets */,
 				0AEE862023D4C74E00F5B72F /* LaunchScreen.storyboard */,
 				0AEE862323D4C74E00F5B72F /* Info.plist */,
 				0A847D8F23D4CAC200730A42 /* GoogleService-Info.plist */,
@@ -165,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A847D9823D4DB5600730A42 /* Colors.xcassets in Resources */,
 				0AEE862223D4C74E00F5B72F /* LaunchScreen.storyboard in Resources */,
 				0A847D9023D4CAC200730A42 /* GoogleService-Info.plist in Resources */,
 				0AEE861F23D4C74E00F5B72F /* Preview Assets.xcassets in Resources */,
@@ -221,9 +240,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A847D9623D4D29900730A42 /* AuthView.swift in Sources */,
 				0AEE861823D4C74C00F5B72F /* SimpleMessenger.xcdatamodeld in Sources */,
+				0A847D9223D4CCB500730A42 /* UserSession.swift in Sources */,
+				0A847D9423D4D0DA00730A42 /* User.swift in Sources */,
 				0AEE861323D4C74C00F5B72F /* AppDelegate.swift in Sources */,
 				0AEE861A23D4C74C00F5B72F /* ContentView.swift in Sources */,
+				0A847D9A23D4E43F00730A42 /* SignInView.swift in Sources */,
+				0A847D9C23D4E4A600730A42 /* SignUpView.swift in Sources */,
 				0AEE861523D4C74C00F5B72F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
