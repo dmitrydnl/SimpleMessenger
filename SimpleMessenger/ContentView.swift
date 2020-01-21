@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var session: UserSession
+    @EnvironmentObject var session: UserSessionObserver
     
     func getUser() {
         session.listen()
@@ -18,10 +18,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if (session.session != nil) {
-                Text("Welcome back user!")
-                Button(action: session.signOut) {
-                    Text("Sign out")
-                }
+                ChatView()
             } else {
                 AuthView()
             }
@@ -32,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(UserSession())
+        ContentView().environmentObject(UserSessionObserver())
     }
 }

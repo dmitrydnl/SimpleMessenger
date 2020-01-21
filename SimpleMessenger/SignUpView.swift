@@ -12,7 +12,7 @@ struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var error: String = ""
-    @EnvironmentObject var session: UserSession
+    @EnvironmentObject var session: UserSessionObserver
     
     func signUp() {
         session.signUp(email: email, password: password) { (result, error) in

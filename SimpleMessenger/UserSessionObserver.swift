@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 import Firebase
 
-class UserSession: ObservableObject {
-    var didChange = PassthroughSubject<UserSession, Never>()
+class UserSessionObserver: ObservableObject {
+    var didChange = PassthroughSubject<UserSessionObserver, Never>()
     @Published var session: User? {didSet { self.didChange.send(self) }}
     var handle: AuthStateDidChangeListenerHandle?
     
