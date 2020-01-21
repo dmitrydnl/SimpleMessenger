@@ -24,15 +24,19 @@ class MessagesObserver: ObservableObject {
                     let id = i.document.documentID
                     let email = i.document.get("email") as! String
                     let message = i.document.get("message") as! String
-                    self.messages.append(Message(id: id, email: email, message: message))
+                    let date = i.document.get("date") as! Double
+                    self.messages.append(Message(id: id, email: email, message: message, date: date))
                 }
+            }
+            self.messages.sort {
+                $0.date < $1.date
             }
         }
     }
     
     func sendMessage(message: String, email: String) {
         let database = Firestore.firestore()
-        database.collection("messages").addDocument(data: ["message": message, "email": email]) { (error) in
+        database.collection("messages").addDocument(data: ["message": message, "email": email, "date": Date().timeIntervalSince1970]) { (error) in
             if error != nil {
                 print((error?.localizedDescription)!)
                 return

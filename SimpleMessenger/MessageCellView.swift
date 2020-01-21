@@ -49,6 +49,6 @@ struct MessageCellTail: Shape {
 
 struct MessageCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageCellView(message: Message(id: "12345", email: "test@mail.com", message: "Hello"), isMyMessage: true)
+        MessageCellView(message: Message(id: "12345", email: "test@mail.com", message: "Hello", date: 111.22), isMyMessage: true)
     }
 }

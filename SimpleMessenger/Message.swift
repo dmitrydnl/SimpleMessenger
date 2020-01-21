@@ -10,10 +10,12 @@ struct Message: Identifiable {
     var id: String
     var email: String
     var message: String
+    var date: Double
     
-    init(id: String, email: String, message: String) {
+    init(id: String, email: String, message: String, date: Double) {
         self.id = id
         self.email = email
         self.message = message
+        self.date = date
     }
 }
