@@ -31,13 +31,16 @@ struct ChatView: View {
                 
                 HStack {
                     TextField("Message", text: $typedMessage)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(8)
+                        .background(RoundedRectangle(cornerRadius: 90)
+                        .strokeBorder(Color("Background_1"), lineWidth: 1))
                     
                     Button(action: {
                         self.messages.addMessage(message: self.typedMessage, email: self.session.getEmail())
                         self.typedMessage = ""
                     }) {
-                        Text("Send")
+                        Image(systemName: "paperplane.fill")
+                            .font(.system(size: 22))
                     }
                 }
                 .padding()
