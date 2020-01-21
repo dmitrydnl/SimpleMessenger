@@ -33,7 +33,6 @@ struct MessageCellView: View {
             }
         }
         .padding(isMyMessage ? .leading : .trailing, 55)
-        .padding(.vertical,10)
     }
 }
 

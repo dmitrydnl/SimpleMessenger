@@ -13,6 +13,10 @@ struct ChatView: View {
     @EnvironmentObject var session: UserSessionObserver
     @ObservedObject var messages = MessagesObserver()
     
+    init() {
+        UITableView.appearance().separatorStyle = .none
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
