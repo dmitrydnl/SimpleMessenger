@@ -30,7 +30,7 @@ class MessagesObserver: ObservableObject {
         }
     }
     
-    func addMessage(message: String, email: String) {
+    func sendMessage(message: String, email: String) {
         let database = Firestore.firestore()
         database.collection("messages").addDocument(data: ["message": message, "email": email]) { (error) in
             if error != nil {

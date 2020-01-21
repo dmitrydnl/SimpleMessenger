@@ -40,8 +40,10 @@ struct ChatView: View {
                         .strokeBorder(Color("Background_1"), lineWidth: 1))
                     
                     Button(action: {
-                        self.messages.addMessage(message: self.typedMessage, email: self.session.getEmail())
-                        self.typedMessage = ""
+                        if !self.typedMessage.isEmpty {
+                            self.messages.sendMessage(message: self.typedMessage, email: self.session.getEmail())
+                            self.typedMessage = ""
+                        }
                     }) {
                         Image(systemName: "paperplane.fill")
                             .font(.system(size: 22))

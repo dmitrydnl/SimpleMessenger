@@ -36,6 +36,7 @@ struct SignInView: View {
             
             VStack(spacing: 18) {
                 TextField("Email address", text: $email)
+                    .keyboardType(.emailAddress)
                     .font(.system(size: 14))
                     .padding(12)
                     .background(RoundedRectangle(cornerRadius: 5)
