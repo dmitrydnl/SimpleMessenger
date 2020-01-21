@@ -17,7 +17,7 @@ struct ChatView: View {
         NavigationView {
             VStack {
                 List(messages.messages) { i in
-                    Text(i.message)
+                    MessageCellView(message: i, isMyMessage: self.session.isMyEmail(email: i.email))
                 }
                 .navigationBarTitle("Chat")
                 .navigationBarItems(trailing:
@@ -34,7 +34,7 @@ struct ChatView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
-                        self.messages.addMessage(message: self.typedMessage, email: "test")
+                        self.messages.addMessage(message: self.typedMessage, email: self.session.getEmail())
                         self.typedMessage = ""
                     }) {
                         Text("Send")
