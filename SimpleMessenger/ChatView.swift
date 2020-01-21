@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ChatView: View {
     @State var typedMessage = ""
+    @EnvironmentObject var session: UserSessionObserver
     @ObservedObject var messages = MessagesObserver()
     
     var body: some View {
@@ -19,9 +20,17 @@ struct ChatView: View {
                     Text(i.message)
                 }
                 .navigationBarTitle("Chat")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.session.signOut()
+                    }) {
+                        Text("Log out")
+                            .foregroundColor(.red)
+                    }
+                )
                 
                 HStack {
-                    TextField("Type message", text: $typedMessage)
+                    TextField("Message", text: $typedMessage)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
@@ -39,6 +48,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView().environmentObject(UserSessionObserver())
     }
 }
