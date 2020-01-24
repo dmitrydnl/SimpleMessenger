@@ -26,6 +26,9 @@ class MessagesObserver: ObservableObject {
                     let message = i.document.get("message") as! String
                     let date = i.document.get("date") as! Double
                     self.messages.append(Message(id: id, email: email, message: message, date: date))
+                } else if i.type == .removed {
+                    let id = i.document.documentID
+                    self.messages.removeAll { $0.id == id }
                 }
             }
             self.messages.sort {
@@ -37,6 +40,18 @@ class MessagesObserver: ObservableObject {
     func sendMessage(message: String, email: String) {
         let database = Firestore.firestore()
         database.collection("messages").addDocument(data: ["message": message, "email": email, "date": Date().timeIntervalSince1970]) { (error) in
+            if error != nil {
+                print((error?.localizedDescription)!)
+                return
+            }
+            
+            print("success")
+        }
+    }
+    
+    func deleteMessage(id: String) {
+        let database = Firestore.firestore()
+        database.collection("messages").document(id).delete() { error in
             if error != nil {
                 print((error?.localizedDescription)!)
                 return

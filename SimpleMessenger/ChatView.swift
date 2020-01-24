@@ -23,6 +23,18 @@ struct ChatView: View {
             VStack {
                 List(messages.messages) { i in
                     MessageCellView(message: i, isMyMessage: self.session.isMyEmail(email: i.email))
+                        .contextMenu {
+                                VStack {
+                                    Button(action: {
+                                        self.messages.deleteMessage(id: i.id)
+                                    }) {
+                                        HStack {
+                                            Text("Delete")
+                                            Image(systemName: "trash")
+                                        }
+                                    }
+                                }
+                        }
                 }
                 .navigationBarTitle("Chat")
                 .navigationBarItems(trailing:
