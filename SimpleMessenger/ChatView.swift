@@ -46,9 +46,9 @@ struct ChatView: View {
                     Button(action: {
                         if !self.typedMessage.isEmpty {
                             self.messages.sendMessage(message: self.typedMessage, email: self.session.getEmail())
-                            self.typedMessage = ""
-                            UIApplication.shared.endEditing()
                         }
+                        self.typedMessage = ""
+                        UIApplication.shared.endEditing()
                     }) {
                         Image(systemName: "paperplane.fill")
                             .font(.system(size: 22))
