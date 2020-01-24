@@ -33,6 +33,9 @@ struct ChatView: View {
                             .foregroundColor(.red)
                     }
                 )
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
                 
                 HStack {
                     TextField("Message", text: $typedMessage)
@@ -44,6 +47,7 @@ struct ChatView: View {
                         if !self.typedMessage.isEmpty {
                             self.messages.sendMessage(message: self.typedMessage, email: self.session.getEmail())
                             self.typedMessage = ""
+                            UIApplication.shared.endEditing()
                         }
                     }) {
                         Image(systemName: "paperplane.fill")
