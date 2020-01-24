@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ChatView: View {
     @State var typedMessage = ""
+    @State var heightValue: CGFloat = 0
     @EnvironmentObject var session: UserSessionObserver
     @ObservedObject var messages = MessagesObserver()
     
@@ -50,6 +51,19 @@ struct ChatView: View {
                     }
                 }
                 .padding()
+            }
+            .offset(y: -self.heightValue)
+            .animation(.spring())
+            .onAppear {
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (not) in
+                    let value = not.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                    let height = value.height
+                    self.heightValue = height
+                }
+                
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (not) in
+                    self.heightValue = 0
+                }
             }
         }
     }
