@@ -1,7 +1,5 @@
 <h1 align="center">SimpleMessenger 📱</h1>
 
-## ✨ Demo
-
 `SimpleMessenger` is iOS Messenger application written in `Swift`.
 
 This project used the Firebase cloud service.
@@ -21,9 +19,9 @@ This project used the Firebase cloud service.
 
 1. In terminal: git clone https://github.com/dmitrydnl/SimpleMessenger.git
 2. Open project folder with XCode
-3. Select device (Ex. your iPhone) or virtual device
-<p align="center">
-  <img width="328" alt="Screenshot 2020-01-24 at 11 20 26" src="https://user-images.githubusercontent.com/45558274/73054480-9b06f980-3e9b-11ea-9d66-def429fe74a6.png" alt="demo"/>
+3. [Add Firebase to project](https://firebase.google.com/docs/ios/setup)
+4. Select device (Ex. your iPhone) or virtual device
+5. Build it!
   <img width="1100" alt="Screenshot 2020-01-24 at 11 19 15" src="https://user-images.githubusercontent.com/45558274/73054479-9b06f980-3e9b-11ea-8245-c10cb1d8f9bf.png" alt="demo"/>
 </p>
 
