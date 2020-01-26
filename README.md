@@ -2,25 +2,20 @@
 
 ## ✨ Demo
 
-`SimpleMessenger` is iOS Messenger application written in `swift`.
+`SimpleMessenger` is iOS Messenger application written in `Swift`.
 
-In this project we have used cloud service Firebase. 
-
-It combines many features: authentication, real-time database, file storage, notifications, and more.
-
+This project used the Firebase cloud service.
 
 <p align="center">
   <img align="center" src="https://user-images.githubusercontent.com/45558274/73052986-9ccebe00-3e97-11ea-8859-7c770e79c16d.PNG"  width="48%" align="left"/>
   <img align="center" src="https://user-images.githubusercontent.com/45558274/73052985-9ccebe00-3e97-11ea-9683-50d26b1dd856.PNG" width="48%"/>
 </p>
 
-
 ## 🚀 Usage
 
 1. 👀 `Sign In` or `Sign Up`
 2. 📩 You can `sent` messeges
 3. 🛑 And also `delete` it
-
 
 ## 🐣 You can launch your own app
 
@@ -43,10 +38,3 @@ It combines many features: authentication, real-time database, file storage, not
 
 - Github: [@marshtupa](https://github.com/marshtupa)
 - Instagram: [@marshtupabogdan](https://www.instagram.com/marshtupabogdan)
-
-
-## 📝 License
-
-Copyright © 2020 Dmitry Danilin.
-
-
