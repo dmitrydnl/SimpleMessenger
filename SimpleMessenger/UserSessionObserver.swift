@@ -15,6 +15,18 @@ class UserSessionObserver: ObservableObject {
     @Published var session: User? {didSet { self.didChange.send(self) }}
     var handle: AuthStateDidChangeListenerHandle?
     
+    func isMyEmail(email: String) -> Bool {
+        return (session != nil && session?.email != nil) ? email == session?.email : false
+    }
+    
+    func getEmail() -> String {
+        if session != nil {
+            return session?.email ?? "no_email"
+        }
+        
+        return "no_email"
+    }
+    
     func listen() {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
